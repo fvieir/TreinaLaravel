@@ -40,9 +40,9 @@ Route::any('todos', function () {
 }); // Libera todos os metodos para serem acessados
 
 Route::any('gerar', function () {
-    $url = url('nova'); // função url gera uma nova url com enderenço do site
-    return 'Gera url ' .$url;
-}); 
+    $url = url('nova');
+    return "Gera uma nova url" .$url;
+});
 
 Route::get('produto/{id}', function ($id) {
     return "produto/{$id}";
@@ -55,3 +55,22 @@ Route::get('artigo/{id?}', function ($id = null) {
 Route::get('jogo/{id}/{genero}' , function ($id, $genero){
     return "Jogos - {$id}-{$genero}";
 });
+
+Route::put('link', function (){
+    return 'Link  <a href= "'.route('detalhe').'">Detalhe<a/>'; // Passando com link a rota que foi renomeada
+});
+
+Route::get('teste/detalhe', ['as' => 'detalhe', function () {
+    return "Rota renomeada"; // "as" renomeia a rota, assim caso a rota mude no nome não precisa altera no codigo inteiro
+}]);
+
+Route::group(['prefix' => 'admin'] , function() {
+    Route::get('jogos/{id?}', function ($id = 1){
+        return "Jogos/{$id}";
+    });
+    Route::get('link', function(){
+        return 'Link  <a href="'.route('detalhe').'">Detalhe</a>';
+    });
+}); // Varias rotas de um grupo, todos podem ser acessadas por localhost/admin/jogos ou admin/link 
+
+

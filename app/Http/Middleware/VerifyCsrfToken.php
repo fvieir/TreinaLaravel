@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         'contato',
         'sobre',
         'todos',
-        'gerar'
+        'gerar',
+        'link'
     ];
 }
