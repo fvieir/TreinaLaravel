@@ -31,7 +31,7 @@ Route::put('contato', function () {
     return 'Realizando um Put';
 });
 
-Route::match(['get', 'post'],'sobre', function () {
+Route::match(['get', 'post'],'sobreP', function () {
     return 'Trabalhando com varios verbos';
 }); // função march permiti escolher quais metodos ficaram liberados
 
@@ -72,5 +72,14 @@ Route::group(['prefix' => 'admin'] , function() {
         return 'Link  <a href="'.route('detalhe').'">Detalhe</a>';
     });
 }); // Varias rotas de um grupo, todos podem ser acessadas por localhost/admin/jogos ou admin/link 
+
+Route::get('home','HomeController@index'); // Rota para chamar um controller com metodo index
+
+Route::get('/amigos','HomeController@amigos');
+
+Route::get('/sobre', 'HomeController@sobre');
+
+Route::get('/dinamico','HomeController@dinamico');
+
 
 
