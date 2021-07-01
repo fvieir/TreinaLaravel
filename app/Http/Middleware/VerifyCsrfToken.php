@@ -23,6 +23,8 @@ class VerifyCsrfToken extends Middleware
         'sobre',
         'todos',
         'gerar',
-        'link'
+        'link',
+        'produto',
+        'estoque'
     ];
 }

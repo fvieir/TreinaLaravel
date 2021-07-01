@@ -81,5 +81,13 @@ Route::get('/sobre', 'HomeController@sobre');
 
 Route::get('/dinamico','HomeController@dinamico');
 
+Route::get('aluno', 'Aluno\AlunoController@index');
+
+Route::get('livro', ['uses' => 'LivroController@index', 'as' => 'livro.index']);
+
+Route::resource('estoque','EstoqueController');
+
+
+
 
 
