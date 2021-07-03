@@ -8,7 +8,24 @@ class HomeController extends Controller
 {
     public function index ()
     {
-        return view('home');
+        $usuarios = array(
+            ['nome' => 'Fabrício'],
+            ['nome' => 'Nath'],
+            ['nome' => 'Marcia'],
+            ['nome' => 'Miriam'],
+        );
+
+        $sequencia = array (
+            ['ordem' => 1],
+            ['ordem' => 2],
+            ['ordem' => 3],
+            ['ordem' => 4],
+            ['ordem' => 5],
+        );
+
+        $livros = [];
+
+        return view('home', compact('usuarios','livros','sequencia'));
     }
 
     public function amigos ()
