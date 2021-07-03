@@ -8,7 +8,10 @@ class ProdutoController extends Controller
 {
     public function index()
     {
-        return "GET: Index";
+        $produtos = [
+            'codigo' => '100100', 'descricao' => 'Alicate'
+        ];
+        return view('produto.index', compact('produtos'));
     }
 
     public function Lista()

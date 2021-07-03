@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App test - @yield('titulo')</title>
+    <title>App teste - @yield('titulo')</title>
 </head>
 <body>
     <header>
-        @section('navbar')
-            <p>NAVBAR Padrao</p>
+        @section('Navbar')
+            Aqui entra a NAVBAR padrao
         @show
     </header>
+
     <main>
-        <div>
-            @yield('conteudo')
-        </div>
+        @yield('conteudo')
     </main>
+
     <footer>
-        @section('footer')
-            @include('layouts._includes._footer')
-        @show
+        @include('layouts._includes._footer')
     </footer>
 </body>
 </html>
