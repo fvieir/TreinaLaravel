@@ -44,9 +44,9 @@ Route::any('gerar', function () {
     return "Gera uma nova url" .$url;
 });
 
-Route::get('produto/{id}', function ($id) {
+/*Route::get('produto/{id}', function ($id) {
     return "produto/{$id}";
-}); // Passando parametros
+}); // Passando parametros*/
 
 Route::get('artigo/{id?}', function ($id = null) {
     return "Artigo/{$id}";
@@ -73,19 +73,16 @@ Route::group(['prefix' => 'admin'] , function() {
     });
 }); // Varias rotas de um grupo, todos podem ser acessadas por localhost/admin/jogos ou admin/link 
 
-Route::get('home','HomeController@index'); // Rota para chamar um controller com metodo index
-
 Route::get('/amigos','HomeController@amigos');
-
 Route::get('/sobre', 'HomeController@sobre');
-
 Route::get('/dinamico','HomeController@dinamico');
-
 Route::get('aluno', 'Aluno\AlunoController@index');
-
 Route::get('livro', ['uses' => 'LivroController@index', 'as' => 'livro.index']);
-
 Route::resource('estoque','EstoqueController');
+
+Route::get('/home','HomeController@index');
+
+Route::get('/produto', 'ProdutoController@index');
 
 
 
