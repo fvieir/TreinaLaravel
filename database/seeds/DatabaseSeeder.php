@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::table('livros')->insert([
+            'titulo' => 'A cabana',
+            'descricao' => 'Livro de grande sucesso'
+            
+        ]);
     }
 }
