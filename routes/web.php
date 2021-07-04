@@ -74,15 +74,23 @@ Route::group(['prefix' => 'admin'] , function() {
 }); // Varias rotas de um grupo, todos podem ser acessadas por localhost/admin/jogos ou admin/link 
 
 Route::get('/amigos','HomeController@amigos');
+
 Route::get('/sobre', 'HomeController@sobre');
+
 Route::get('/dinamico','HomeController@dinamico');
+
 Route::get('aluno', 'Aluno\AlunoController@index');
+
 Route::get('livro', ['uses' => 'LivroController@index', 'as' => 'livro.index']);
+
 Route::resource('estoque','EstoqueController');
 
 Route::get('/home','HomeController@index');
 
 Route::get('/produto', 'ProdutoController@index');
+
+Route::get('/usuario',['uses' => 'UsuarioController@index', 'as' => 'usuario']);
+
 
 
 
