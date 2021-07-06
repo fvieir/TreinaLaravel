@@ -11,10 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('livros')->insert([
-            'titulo' => 'A cabana',
-            'descricao' => 'Livro de grande sucesso'
-            
-        ]);
+       $this->call([LivrosTableSeeder::class]);
     }
 }
