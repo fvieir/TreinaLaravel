@@ -26,9 +26,26 @@ use Faker\Generator as Faker;
     ];
 });*/
 
+
 $factory->define(App\Livro::class, function (Faker $faker) {
     return [
-        'titulo' => $faker->paragraph,
+        'titulo' => $faker->text(100),
         'descricao' => $faker->text(100)
     ];
 });
+
+$factory->define(App\Cliente::class, function (Faker $faker){
+    return [
+        'nome' => $faker->text(50),
+        'sobrenome' => $faker->text(100)
+    ];
+});
+
+$factory->define(App\Telefone::class, function (Faker $faker){
+    return [
+        'cliente_id' => rand(1,110),
+        'descricao' => $faker->text(50),
+        'telefone' => $faker->phoneNumber('pt_BR'),
+    ];
+});
+
